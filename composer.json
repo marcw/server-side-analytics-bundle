@@ -3,7 +3,7 @@
     "description": "Symfony2 bundle for the server-side-analytics lib.",
     "require": {
         "sensio/buzz-bundle": "v0.1",
-        "marcw/server-side-analytics": "v0.1"
+        "marcw/server-side-analytics": "v0.2"
     },
     "authors": [
         {

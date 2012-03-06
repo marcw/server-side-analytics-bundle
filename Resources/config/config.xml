@@ -10,6 +10,7 @@
         <parameter key="marcw.server_side_analytics.cookie_name">__utmmobile</parameter>
         <parameter key="marcw.server_side_analytics.cookie_path">/</parameter>
         <parameter key="marcw.server_side_analytics.cookie_persistence">63072000</parameter>
+        <parameter key="marcw.server_side_analytics.trust_proxy">false</parameter>
     </parameters>
 
     <services>
@@ -18,6 +19,7 @@
             <argument>%marcw.server_side_analytics.cookie_name%</argument>
             <argument>%marcw.server_side_analytics.cookie_path%</argument>
             <argument>%marcw.server_side_analytics.cookie_persistence%</argument>
+            <argument>%marcw.server_side_analytics.trust_proxy%</argument>
         </service>
 
         <service id="marcw.server_side_analytics.controller" class="%marcw.server_side_analytics.controller.class%">
