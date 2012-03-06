@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="marcw.server_side_analytics.class">MarcW\ServerSideAnalytics\Analytics</parameter>
+        <parameter key="marcw.server_side_analytics.controller.class">MarcW\Bundle\ServerSideAnalyticsBundle\Controller\AnalyticsController</parameter>
+
+        <parameter key="marcw.server_side_analytics.cookie_name">__utmmobile</parameter>
+        <parameter key="marcw.server_side_analytics.cookie_path">/</parameter>
+        <parameter key="marcw.server_side_analytics.cookie_persistence">63072000</parameter>
+    </parameters>
+
+    <services>
+        <service id="marcw.server_side_analytics" class="%marcw.server_side_analytics.class%">
+            <argument type="service" id="buzz" />
+            <argument>%marcw.server_side_analytics.cookie_name%</argument>
+            <argument>%marcw.server_side_analytics.cookie_path%</argument>
+            <argument>%marcw.server_side_analytics.cookie_persistence%</argument>
+        </service>
+
+        <service id="marcw.server_side_analytics.controller" class="%marcw.server_side_analytics.controller.class%">
+            <argument type="service" id="marcw.server_side_analytics" />
+        </service>
+    </services>
+</container>
+
+

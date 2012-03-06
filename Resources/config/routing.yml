@@ -1,0 +1,3 @@
+_ga_tracking:
+    pattern:  /ga.gif
+    defaults: { _controller: "marcw.server_side_analytics.controller:trackAction" }
